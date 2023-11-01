@@ -2,6 +2,8 @@
 
 This repository contains a simple Todo app built with Svelte on the frontend and Rust on the backend. Please note that this project was created for instructional purposes, following a tutorial on YouTube.
 
+After cloning and installing packages, run `sqlx database create` to create the DB and start working.
+
 ## Features
 
 - Frontend built with Svelte
