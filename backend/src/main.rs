@@ -60,7 +60,7 @@ async fn create(State(pool): State<SqlitePool>, Form(todo): Form<NewTodo>) -> Re
     )
     .execute(&pool)
     .await?;
-    Ok(Redirect::to("http://localhost:5173/"))
+    Ok(Redirect::to("http://localhost:5173"))
 }
 
 async fn update(State(pool): State<SqlitePool>, Form(todo): Form<Todo>) -> Result<Redirect> {
@@ -72,12 +72,12 @@ async fn update(State(pool): State<SqlitePool>, Form(todo): Form<Todo>) -> Resul
     )
     .execute(&pool)
     .await?;
-    Ok(Redirect::to("http://localhost:5173/"))
+    Ok(Redirect::to("http://localhost:5173"))
 }
 
 async fn delete(State(pool): State<SqlitePool>, Path(id): Path<i64>) -> Result<Redirect> {
     sqlx::query!("DELETE FROM todos WHERE id = ?", id)
         .execute(&pool)
         .await?;
-    Ok(Redirect::to("http://localhost:5173/"))
+    Ok(Redirect::to("http://localhost:5173"))
 }
