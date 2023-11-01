@@ -7,10 +7,10 @@
 
   const deleteTodo = async (id: number) => {
     await fetch(`http://localhost:3000/delete/${id}`);
-    todos = todos.filter((todo) => todo.id != id);
+    todos = todos.filter((todo: { id: number }) => todo.id != id);
   };
 
-  const updateTodo = async (todo: Todo) => {
+  const updateTodo = async (todo: any) => {
     await fetch(
       `http://localhost:3000/update?id=${todo.id}&description=${todo.description}&done=${todo.done}`
     );
